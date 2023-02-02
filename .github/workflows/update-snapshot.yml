@@ -74,5 +74,5 @@ jobs:
       #     file_pattern: "*.png"
       #     commit_message: "[CI] Update Snapshots"
       - name: Clean Cache
-        uses: ./clean-cache.yml
+        uses: ./.github/workflows/clean-cache.yml
 
