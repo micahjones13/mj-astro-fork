@@ -76,7 +76,9 @@ jobs:
   RemoveCache:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Load all commits
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Clean cache
         uses: ./.github/workflows/clean-cache.yml
