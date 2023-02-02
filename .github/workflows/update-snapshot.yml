@@ -73,7 +73,8 @@ jobs:
       #   with:
       #     file_pattern: "*.png"
       #     commit_message: "[CI] Update Snapshots"
-  CleanCache:
+  RemoveCache:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Branch
         uses: actions/checkout@v2
