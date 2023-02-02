@@ -73,6 +73,9 @@ jobs:
       #   with:
       #     file_pattern: "*.png"
       #     commit_message: "[CI] Update Snapshots"
-      - name: Clean Cache
+  CleanCache:
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v2
+      - name: Clean cache
         uses: ./.github/workflows/clean-cache.yml
-
