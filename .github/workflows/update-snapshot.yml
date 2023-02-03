@@ -78,4 +78,4 @@ jobs:
     with:
       config-path: .github/update-snapshot.yml
     secrets:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      token: ${{ secrets.GITHUB_TOKEN }}
