@@ -100,4 +100,4 @@ jobs:
       - name: Checkout Branch
         run: git checkout ${{ steps.get-branch-and-sha.outputs.branch }}
       - name: Clean cache
-        uses: ./.github/workflows/clean-cache.yml
+        uses: ./.github/workflows/clean-cache
