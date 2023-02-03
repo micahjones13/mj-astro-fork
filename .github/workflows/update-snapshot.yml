@@ -103,4 +103,4 @@ jobs:
         uses: ./.github/workflows/reuse-clean-cache.yml
         with:
           config-path: .github/update-snapshot.yml
-        secrets: inherit
+          secrets: inherit
