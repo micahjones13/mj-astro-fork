@@ -1,13 +1,17 @@
-name: Clean cache post snapshots
-description: Clean Cache after snapshots get updated
-runs:
-  using: "composite"
-  steps:
+name: Reusable cleanup caches
+on:
+  workflow_call:
+    secrets:
+      token:
+        required: true
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
       - name: Check out code
         uses: actions/checkout@v3
 
       - name: Cleanup
-        shell: bash
         run: |
           gh extension install actions/gh-actions-cache
 
@@ -25,3 +29,5 @@ runs:
               gh actions-cache delete $cacheKey -R $REPO -B $BRANCH --confirm
           done
           echo "Done"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

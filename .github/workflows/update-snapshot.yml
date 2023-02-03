@@ -100,4 +100,6 @@ jobs:
       # - name: Checkout Branch
       #   run: git checkout ${{ steps.get-branch-and-sha.outputs.branch }}
       - name: Clean cache
-        uses: ./.github/workflows/clean-cache
+        uses: ./.github/workflows/reuse-clean-cache.yml
+        with:
+          secrets: inherit
